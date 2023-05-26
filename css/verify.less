@@ -1,0 +1,12 @@
+@import "./style.less";
+html { height: 100%; }
+.verify { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: space-around; background-color: white;
+    .top { gap: 10px; display: flex; align-items: center;
+        .top__logo { height: 30px; }
+        .top__content { display: flex; flex-direction: column; }
+        .top__title { font-size: @fL; font-weight: bold; color: @cG1; }
+        .top__description { font-size: @fM; color: @cG3; }}
+    .middle { gap: 20px; position: relative; display: flex; flex-direction: column; align-items: center;
+        .verify__input { width: 350px; padding: 5px; border-bottom: 1px solid @cG5; border-radius: 0; }
+        .verify__code { padding: 5px 10px; border-radius: 99px; right: 0; bottom: 5px; position: absolute; display: flex; background-color: @c3; font-size: @fS; color: white; }}
+    .verify__button { width: 150px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 99px; color: white; background-color: @c3; }}

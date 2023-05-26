@@ -1,0 +1,17 @@
+@import "./style.less";
+html { height: 100%; }
+.login { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: space-around; background-color: @c3;
+    .close { width: 30px; height: 30px; top: 15px; right: 15px; position: absolute; display: flex; align-items: center; justify-content: center;
+        img { width: 14px; }}
+    .top { gap: 10px; display: flex; align-items: center;
+        .top__logo { height: 30px; }
+        .top__content { display: flex; flex-direction: column; }
+        .top__title { font-size: @fL; font-weight: bold; color: white; }
+        .top__description { font-size: @fM; color: rgba(white, 0.6); }}
+    .middle { gap: 20px; display: flex; flex-direction: column; align-items: center;
+        .login__button { width: 280px; height: 40px; padding: 0 15px; border-radius: 15px; gap: 15px; display: flex; align-items: center; background-color: white; }
+        .login__icon { width: 20px; }
+        .login__text { width: 100%; border-left: 1px solid @cG5; text-align: center; }}
+    .bottom { gap: 2px; display: flex; align-items: center;
+        .bottom__text { font-size: @fXS; color: white; }
+        .bottom__logo { height: 20px; }}}

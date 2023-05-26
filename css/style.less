@@ -1,0 +1,124 @@
+/* CSS Table of Contents
+    1. Variables
+    2. Style Reset
+    3. Components */
+
+/******************************
+1. Variables */
+
+/* Font Family */
+@font-face { font-style: normal; font-weight: 400; font-display: swap; font-family: 'Noto Sans TC';
+    src: url(https://fonts.gstatic.com/s/notosanstc/v26/-nF7OG829Oofr2wohFbTp9iFOisNA_cTyNromxqQuEMQ2wHYwbnmy1R1jDujLebozBXCo2qYhRo.0.woff2) format("woff2"); }
+@font-face { font-style: normal; font-weight: 700; font-display: swap; font-family: 'Noto Sans TC';
+    src: url(https://fonts.gstatic.com/s/notosanstc/v26/-nFkOG829Oofr2wohFbTp9i9gwQvDt1T39Cx8GLqqFgF1gfCybqlyVAxgTa5Jtz_zCzHs2CN4HYM28s.0.woff2) format("woff2"); }
+@font-face { font-style: normal; font-weight: 400; font-display: swap; font-family: 'Roboto';
+    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4mxKKTU1Kg.woff2) format("woff2"); }
+@font-face { font-style: normal; font-weight: 700; font-display: swap; font-family: 'Roboto';
+    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfBBc4AMP6lQ.woff2) format("woff2"); }
+
+/* Font Size */
+@fXXL: 1.9rem;
+@fXL:  1.4rem;
+@fL:   1.2rem;
+@fM:   1rem;
+@fS:   0.8rem;
+@fXS:  0.6rem;
+
+/* Color */
+@c1:     #FF9900;
+@c2:     #96BE0B;
+@c3:     #22798C;
+@cG1:    #333333;
+@cG2:    #4F4F4F;
+@cG3:    #828282;
+@cG4:    #BDBDBD;
+@cG5:    #E0E0E0;
+@cG6:    #F2F2F2;
+@cBg:    #F2F1F6;
+@cRed:   #EB5757;
+@cGreen: #27AE60;
+
+/* Screen Size */
+@sD:    (min-width: 1024px);                        /* Desktop */
+@sT:    (max-width: 1023px) and (min-width: 768px); /* Tablet */
+@sM:    (max-width: 767px);                         /* Mobile */
+
+/******************************
+2. Reset */
+*                                           { margin: 0; padding: 0;
+    &:visited                               { color: inherit; }}
+html, body                                  { overscroll-behavior-x: none; }
+*, span, p, h1, h2, h3, h4, h5, h6, div, a,
+select, input, textarea, button, ol, ul     { font-size: @fM; font-family: 'Noto Sans TC', 'Roboto'; }
+span, p, h1, h2, h3, h4, h5, h6, div,
+input, textarea, ol, ul                     { color: @cG1; }
+a                                           { border-radius: 5px; color: inherit; text-decoration: none !important; }
+a:hover                                     { cursor: pointer;
+    @media @sD                              { box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.2); }}
+button                                      { border: none; }
+button:hover                                { cursor: pointer;
+    @media @sD                              { box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.2); }}
+input                                       { border: 0; padding: 0; background-color: transparent; }
+input:focus                                 { box-shadow: none !important; outline: none; }
+input:-webkit-autofill                      { color: @c1 !important; background-color: transparent !important; box-shadow: 0 0 0px 1000px white inset !important; background-clip: content-box !important; }
+input::placeholder, textarea::placeholder   { color: @cG4; }
+textarea                                    { border: 0; resize: none; }
+textarea:focus                              { box-shadow: none !important; outline: none; }
+select                                      { -webkit-appearance: none; -moz-appearance: none; appearance: none; outline: none; border: 0; }
+select:hover                                { cursor: pointer; }
+label                                       { cursor: pointer; }
+img                                         { object-fit: cover; }
+i, svg                                      { text-decoration: none !important; }
+iframe                                      { border: 0; }
+*, :after, :before                          { box-sizing: border-box !important; -webkit-box-sizing: border-box; }
+
+/******************************
+3. Components */
+.disabled   { color: @cG4 !important; filter: grayscale(100%); opacity: 0.5; pointer-events: none;
+    *       { color: @cG4 !important; }
+    img     { filter: grayscale(100%); opacity: 0.5; }}
+.loading { top: 0; left: 0; width: 100vw; height: 100vh; position: fixed; display: flex; align-items: center; justify-content: center; z-index: 9; background-color: rgba(0,0,0,0.9);
+    &.loading--center { background-color: transparent; pointer-events: none; }
+    &.loading--full { background-color: black; }
+    > div { min-width: 120px; min-height: 120px; border-radius: 20px; display: flex; align-items: center; justify-content: center;
+        > div { min-width: 100px; min-height: 100px; border: 3px solid white; border-top: 3px solid transparent; border-radius: 50%; -webkit-animation: spin 1s linear infinite; animation: spin 1s linear infinite; }
+        img { width: 60px; position: absolute; }}}
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        @-webkit-keyframes spin { 0% { -webkit-transform: rotate(0deg); } 100% { -webkit-transform: rotate(360deg); } }
+.check { padding-right: 34px; position: relative; align-items: center;
+    .check__default { display: none;
+        &:checked ~ .check__mark { background-color: @c1; border: 2px solid @c1; }
+        &:checked ~ .check__mark:after { display: block; }}
+    .check__mark { width: 24px; height: 24px; right: 0; position: absolute; background: @cG5;
+        &:after { content: ""; position: absolute; display: none; }
+        &.check__mark--full { border: 2px solid @cG5; background-color: white; }
+        &.check__mark--radio { border-radius: 50%;
+            &:after { top: 7.5px; left: 7.5px; width: 5px; height: 5px; border-radius: 50%; background: white; }}
+        &.check__mark--checkbox { border-radius: 3px;
+            &:after { left: 5.5px; top: 0.5px; width: 9px; height: 15px; border: solid white; border-width: 0 3px 3px 0; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }}}}
+button { width: 100%; height: 60px; border-radius: 20px; display: flex; align-items: center; justify-content: center; gap: 5px; background-color: @c1;
+    * { color: white !important; }}
+.pop { width: 100%; height: 100%; padding: 10px; position: fixed; top: 0; left: 0; background-color: rgba(0, 0, 0, 0.5); display: none; align-items: flex-end; justify-content: center; z-index: 8;
+    &.pop--full { padding: 70px 0 0;
+        .pop__body { border-radius: 20px 20px 0 0; }}
+    &.pop--center { align-items: center;
+        .pop__body { max-width: 512px; overflow-y: visible; }}
+    .pop__body { width: 100%; max-width: 1024px; max-height: 100%; padding: 20px; border-radius: 20px; position: relative; display: flex; flex-direction: column; align-items: center; gap: 20px; background-color: white; overflow-y: auto; animation-name: popup; animation-duration: 0.5s; animation-iteration-count: 1;
+        .pop__close { width: 30px; height: 30px; min-height: 30px; margin: -20px -5px -30px auto; border-radius: 99px; top: -5px; position: sticky; display: flex; align-items: center; justify-content: center; color: @cG4; background-color: rgba(255, 255, 255, 0.75);
+            &.pop__close--fixed { margin: 0; top: 17px; right: 17px; position: fixed; background-color: rgba(0,0,0,0.9); box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+                i, svg { color: white; }}}
+        .pop__icons { width: 100%; display: flex; justify-content: center; margin: -60px 0 -10px;
+            .pop__icon { width: 80px; height: 80px; border: 6px solid @c1; border-radius: 99px; display: flex; align-items: center; justify-content: center; background-color: white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
+                i, svg { color: @c1; }}
+            .pop__icon--green { border: 6px solid @cGreen;
+                i, svg { color: @cGreen; }}
+            .pop__icon--red { border: 6px solid @cRed;
+                i, svg { color: @cRed; }}}
+        .pop__title { font-size: @fL; }
+        .pop__content { margin-top: -20px; font-size: @fM; color: @cG3; }
+        .pop__actions { width: 100%; display: flex; gap: 15px; }
+        .pop__action { height: 40px; }
+        .pop__action--minor { background-color: @cBg; 
+            > * { color: @c1 !important; }}}}
+    @keyframes popup { 0% { margin-bottom: -100vh; opacity: 0; } 50% { opacity: 1; } 100% { margin-bottom: 0; opacity: 1; }}
+    @keyframes popdown { 0% { margin-bottom: 0; opacity: 1; } 50% { opacity: 1; } 100% { margin-bottom: -100vh; opacity: 0; }}
