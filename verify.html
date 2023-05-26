@@ -2,7 +2,7 @@
 <html translate="no">
     <head>
         <title>點點雲</title>
-        <link rel="icon" type="image/svg" href="./img/icon/favicon.svg"/> 
+        <link rel="icon" type="image/svg" href="./img/favicon.svg"/> 
         <meta charset="UTF-8">
         <meta name="keywords" content="點點雲">
         <meta name="description" content="點點雲">
@@ -16,11 +16,11 @@
     <body class="verify">
         <!-- Loading -->
         <!-- <div class="loading"><div>
-            <img src="./img/icon/favicon.svg">
+            <img src="./img/favicon.svg">
         <div></div></div></div> -->
 
         <div class="top">
-            <img class="top__logo" src="./img/icon/favicon.svg">
+            <img class="top__logo" src="./img/favicon.svg">
             <div class="top__content">
                 <span class="top__title">驗證點點付會員</span>
                 <span class="top__description">即享最新優惠及點數折抵</span>
@@ -31,7 +31,15 @@
             <input class="verify__input" type="text" placeholder="驗證碼" value="">
             <a class="verify__code">傳送驗證碼</a>
         </div>
-        <a class="verify__button" onclick="window.location.href='login.html'">會員驗證</a>
+        <a class="verify__button" onclick="window.location.href='login.html'">
+            <!-- 1. 未驗證 -->
+            會員驗證
+            <!-- 2. 未驗中 -->
+            <div class="verify__loading"></div>
+            <!-- 3. 驗證成功 -->
+            驗證成功
+            <img class="verify__icon" src="./img/check.svg">
+        </a>
 
         <!-- Script -->
         <script src="./js/less.js" ></script> <!-- Less -->
