@@ -530,12 +530,27 @@ button * {
   align-items: center;
   background-color: white;
 }
+.login .pop__login .pop__body .middle .login__button--secondary {
+  background: rgba(255, 255, 255, 0.25);
+}
+.login .pop__login .pop__body .middle .login__button--secondary .login__text {
+  color: white;
+}
+.login .pop__login .pop__body .middle .login__button--light {
+  background: transparent;
+}
+.login .pop__login .pop__body .middle .login__button--light .login__text {
+  border: 0;
+  color: white;
+  text-decoration: underline;
+  font-weight: bold;
+}
 .login .pop__login .pop__body .middle .login__icon {
   width: 20px;
 }
 .login .pop__login .pop__body .middle .login__text {
   width: 100%;
-  border-left: 1px solid #E0E0E0;
+  border-left: 1px solid rgba(0, 0, 0, 0.08);
   text-align: center;
 }
 .login .pop__login .pop__body .message {

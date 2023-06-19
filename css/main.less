@@ -10,8 +10,12 @@
             .top__description { font-size: @fM; color: rgba(white, 0.6); }}
         .middle { gap: 20px; display: flex; flex-direction: column; align-items: center;
             .login__button { width: 280px; height: 40px; padding: 0 15px; border-radius: 15px; gap: 15px; display: flex; align-items: center; background-color: white; }
+            .login__button--secondary { background: rgba(white, 0.25);
+                .login__text { color: white; }}
+            .login__button--light { background: transparent;
+                .login__text { border: 0; color: white; text-decoration: underline; font-weight: bold; }}
             .login__icon { width: 20px; }
-            .login__text { width: 100%; border-left: 1px solid @cG5; text-align: center; }}
+            .login__text { width: 100%; border-left: 1px solid rgba(black, 0.08); text-align: center; }}
         .message { font-size: @fM; color: @c1; }
         .bottom { gap: 2px; display: flex; align-items: center;
             .bottom__text { font-size: @fXS; color: white; }
