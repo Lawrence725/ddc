@@ -537,13 +537,11 @@ button * {
   color: white;
 }
 .login .pop__login .pop__body .middle .login__button--light {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.25);
 }
 .login .pop__login .pop__body .middle .login__button--light .login__text {
   border: 0;
   color: white;
-  text-decoration: underline;
-  font-weight: bold;
 }
 .login .pop__login .pop__body .middle .login__icon {
   width: 20px;
