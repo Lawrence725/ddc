@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-TW" translate="no">
+    <head>
+        <title>DDPay</title>
+        <link rel="icon" type="image/svg" href="./img/icon/favicon.svg"/> 
+        <meta charset="UTF-8">
+        <meta name="keywords" content="DDPay">
+        <meta name="description" content="DDPay">
+        <meta name="author" content="DotDot">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> <!-- Screen Ratio -->
+        <meta name="google" content="notranslate">
+        <!-- CSS -->
+        <link href="./css/fontawesome-free-6.4.2-web/css/all.css" rel="stylesheet"> <!-- Awesome Icon -->
+        <link href="./css/home.less" rel="stylesheet/less" type="text/css"/>
+    </head>
+    <body class="home">
+        <!-- Loading -->
+        <!-- <div class="loading"><div>
+            <img src="./img/icon/favicon.svg">
+        <div></div></div></div> -->
+        
+        <!--------------- Header --------------->
+        <section id ="header"></section>
+
+        <!--------------- Main --------------->
+        <section class="main">
+            <button onclick="popNotice()">
+                <span>Test</span>
+            </button>
+        </section>
+
+        <!-- 通知popup -->
+        <section id="pop__notice" class="pop pop--center pop__notice" onclick="popClose(this)">
+            <div class="pop__body">
+                <span class="pop__title">通知標題</span>
+                <span class="pop__content">通知內容</span>
+                <div class="pop__actions">
+                    <button class="pop__action pop__action--minor" onclick="popClose(this)">
+                        <i class="fa-solid fa-xmark fa-xl"></i>
+                    </button>
+                    <button class="pop__action" onclick="window.location.href=''">
+                        <span>確認</span>
+                        <i class="fa-solid fa-arrow-right fa-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Script -->
+        <script src="./js/less.js" ></script> <!-- Less -->
+        <script src="./js/header.js"></script>
+        <script src="./js/home.js"></script>
+    </body>
+</html>
