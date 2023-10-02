@@ -567,44 +567,61 @@ button * {
 .login .pop__login .pop__body .bottom .bottom__logo {
   height: 20px;
 }
-.login .pop__verify .pop__body {
+.login .pop__verify .pop__body,
+.verify {
   gap: 50px;
 }
-.login .pop__verify .pop__body .top {
+.login .pop__verify .pop__body.verify,
+.verify.verify {
+  padding: 20px;
+  gap: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.login .pop__verify .pop__body .top,
+.verify .top {
   gap: 10px;
   display: flex;
   align-items: center;
 }
-.login .pop__verify .pop__body .top .top__logo {
+.login .pop__verify .pop__body .top .top__logo,
+.verify .top .top__logo {
   height: 30px;
 }
-.login .pop__verify .pop__body .top .top__content {
+.login .pop__verify .pop__body .top .top__content,
+.verify .top .top__content {
   display: flex;
   flex-direction: column;
 }
-.login .pop__verify .pop__body .top .top__title {
+.login .pop__verify .pop__body .top .top__title,
+.verify .top .top__title {
   font-size: 1.2rem;
   font-weight: bold;
   color: #333333;
 }
-.login .pop__verify .pop__body .top .top__description {
+.login .pop__verify .pop__body .top .top__description,
+.verify .top .top__description {
   font-size: 1rem;
   color: #828282;
 }
-.login .pop__verify .pop__body .middle {
+.login .pop__verify .pop__body .middle,
+.verify .middle {
   gap: 20px;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.login .pop__verify .pop__body .middle .verify__input {
+.login .pop__verify .pop__body .middle .verify__input,
+.verify .middle .verify__input {
   width: 350px;
   padding: 5px;
   border-bottom: 1px solid #E0E0E0;
   border-radius: 0;
 }
-.login .pop__verify .pop__body .middle .verify__code {
+.login .pop__verify .pop__body .middle .verify__code,
+.verify .middle .verify__code {
   padding: 5px 10px;
   border-radius: 99px;
   right: 0;
@@ -615,7 +632,8 @@ button * {
   font-size: 0.8rem;
   color: white;
 }
-.login .pop__verify .pop__body .verify__button {
+.login .pop__verify .pop__body .verify__button,
+.verify .verify__button {
   min-width: 150px;
   height: 40px;
   padding: 0 20px;
@@ -627,7 +645,8 @@ button * {
   color: white;
   background-color: #22798C;
 }
-.login .pop__verify .pop__body .verify__button .verify__loading {
+.login .pop__verify .pop__body .verify__button .verify__loading,
+.verify .verify__button .verify__loading {
   min-width: 18px;
   min-height: 18px;
   border: 2px solid white;
@@ -636,6 +655,7 @@ button * {
   -webkit-animation: spin 1s linear infinite;
   animation: spin 1s linear infinite;
 }
-.login .pop__verify .pop__body .verify__button .verify__icon {
+.login .pop__verify .pop__body .verify__button .verify__icon,
+.verify .verify__button .verify__icon {
   height: 18px;
 }
