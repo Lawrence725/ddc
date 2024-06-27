@@ -613,18 +613,26 @@ button * {
   flex-direction: column;
   align-items: center;
 }
+.login .pop__verify .pop__body .middle .heading,
+.verify .middle .heading {
+  width: 350px;
+  margin-bottom: -15px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
 .login .pop__verify .pop__body .middle .verify__input,
 .verify .middle .verify__input {
   width: 350px;
-  padding: 5px;
-  border-bottom: 1px solid #E0E0E0;
-  border-radius: 0;
+  height: 40px;
+  padding: 0 10px;
+  border: 1px solid #E0E0E0;
+  border-radius: 15px;
 }
 .login .pop__verify .pop__body .middle .verify__code,
 .verify .middle .verify__code {
   padding: 5px 10px;
-  border-radius: 99px;
-  right: 0;
+  border-radius: 10px;
+  right: 5px;
   bottom: 5px;
   position: absolute;
   display: flex;
